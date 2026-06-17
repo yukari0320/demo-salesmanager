@@ -1,0 +1,166 @@
+/* ───────── shared input ───────── */
+.input {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 14px;
+  color: var(--text);
+  background: #fff;
+  outline: none;
+  font-family: inherit;
+}
+
+textarea.input {
+  resize: vertical;
+  min-height: 64px;
+}
+
+/* ───────── Badge ───────── */
+.badge {
+  color: #fff;
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ───────── Btn ───────── */
+.btn {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 9px 18px;
+  transition: opacity 0.15s;
+  font-family: inherit;
+}
+.btnSmall {
+  font-size: 12px;
+  padding: 5px 11px;
+}
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.btnPrimary {
+  background: var(--primary);
+  color: #fff;
+}
+.btnGhost {
+  background: #f1f5f9;
+  color: var(--sub);
+}
+.btnDanger {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+.btnSuccess {
+  background: var(--success-light);
+  color: var(--success);
+}
+.btnOutline {
+  background: #fff;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+
+/* ───────── Field ───────── */
+.field {
+  margin-bottom: 14px;
+}
+.fieldLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--sub);
+  margin-bottom: 5px;
+}
+
+/* ───────── Modal ───────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 16px;
+}
+.modal {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px 20px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.3);
+  max-height: 92vh;
+  overflow-y: auto;
+}
+.modalHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.modalTitle {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text);
+}
+.modalClose {
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--muted);
+  line-height: 1;
+}
+
+/* ───────── Toast ───────── */
+.toast {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 300;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.3);
+}
+
+/* ───────── Empty ───────── */
+.empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--muted);
+}
+.emptyIcon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+.emptyText {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--sub);
+}
+.emptySub {
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* form action row */
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(break)",
+      "Bash(curl -s http://localhost:3000/api/data)",
+      "Bash(curl -s -X PUT http://localhost:3000/api/data -H 'Content-Type: application/json' -d '{\"visits\":[{\"id\":\"t1\",\"date\":\"2026-06-17\",\"client\":\"テスト商事\",\"address\":\"東京\",\"memo\":\"初訪問\",\"status\":\"訪問済\"}]}')",
+      "Bash(curl -s -X PUT http://localhost:3000/api/data -H 'Content-Type: application/json' -d '{}')",
+      "Bash(pkill -f \"next start\")",
+      "Bash(pkill -f \"next-server\")"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+:root {
+  /* ── Design tokens (ported from the original `C` object) ── */
+  --bg: #f0f4f8;
+  --card: #ffffff;
+  --border: #e2e8f0;
+
+  --primary: #2563eb;
+  --primary-light: #dbeafe;
+  --primary-text: #1d4ed8;
+
+  --text: #1e293b;
+  --sub: #64748b;
+  --muted: #94a3b8;
+
+  --success: #16a34a;
+  --success-light: #dcfce7;
+  --warn: #ea580c;
+  --warn-light: #fff7ed;
+  --danger: #dc2626;
+  --danger-light: #fee2e2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hiragino Sans", "Yu Gothic UI", sans-serif;
+}
+
+button {
+  font-family: inherit;
+}

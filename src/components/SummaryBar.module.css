@@ -1,0 +1,38 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.cell {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 8px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+}
+.cellAccent {
+  background: var(--warn-light);
+  border-color: #fed7aa;
+}
+.icon {
+  font-size: 18px;
+}
+.value {
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--primary);
+  margin: 3px 0 1px;
+}
+.valueSm {
+  font-size: 13px;
+}
+.valueAccent {
+  color: var(--warn);
+}
+.label {
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 600;
+}

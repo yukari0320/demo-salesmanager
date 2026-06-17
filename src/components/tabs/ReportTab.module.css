@@ -1,0 +1,157 @@
+/* ───────── month selector ───────── */
+.monthBar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.yearSelect {
+  width: auto;
+}
+.monthChips {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.monthChip {
+  border: 1.5px solid var(--border);
+  background: #fff;
+  color: var(--sub);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.monthChipActive {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary-text);
+}
+
+/* ───────── stat cards ───────── */
+.statRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.statCard {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  flex: 1 1 140px;
+}
+.statCardAccent {
+  background: var(--warn-light);
+  border-color: #fed7aa;
+}
+.statIcon {
+  font-size: 22px;
+}
+.statValue {
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--text);
+  margin: 4px 0 2px;
+}
+.statValueAccent {
+  color: var(--warn);
+}
+.statLabel {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.statSub {
+  font-size: 11px;
+  color: var(--sub);
+  margin-top: 2px;
+}
+
+/* ───────── panels (tables / bars) ───────── */
+.panel {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.panelTitle {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+/* ───────── table ───────── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.theadRow {
+  border-bottom: 1.5px solid var(--border);
+}
+.th {
+  padding: 4px 8px;
+  color: var(--sub);
+  font-weight: 700;
+  font-size: 11px;
+}
+.thLeft {
+  text-align: left;
+}
+.thRight {
+  text-align: right;
+}
+.tbodyRow {
+  border-bottom: 1px solid var(--border);
+}
+.td {
+  padding: 8px 8px;
+}
+.tdName {
+  font-weight: 600;
+  color: var(--text);
+}
+.tdNum {
+  text-align: right;
+  color: var(--sub);
+}
+.tdSales {
+  text-align: right;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ───────── bar chart ───────── */
+.barItem {
+  margin-bottom: 10px;
+}
+.barHead {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.barName {
+  font-weight: 600;
+  color: var(--text);
+}
+.barMeta {
+  color: var(--sub);
+}
+.barTrack {
+  background: var(--border);
+  border-radius: 99px;
+  height: 6px;
+}
+.barFill {
+  background: var(--primary);
+  border-radius: 99px;
+  height: 6px;
+  transition: width 0.4s;
+}
