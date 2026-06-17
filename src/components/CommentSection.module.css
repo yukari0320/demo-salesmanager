@@ -1,26 +1,29 @@
 .wrap {
-  margin-top: 12px;
+  margin-top: 14px;
   border-top: 1px solid var(--border);
-  padding-top: 12px;
+  padding-top: 14px;
 }
 .heading {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--sub);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 .comment {
-  background: #f8fafc;
-  border-radius: 8px;
-  padding: 8px 10px;
-  margin-bottom: 6px;
+  background: var(--card-soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 12px;
+  margin-bottom: 7px;
   font-size: 13px;
 }
 .commentHead {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 .author {
   font-weight: 700;
@@ -43,22 +46,27 @@
   color: var(--muted);
   font-size: 13px;
   padding: 0;
+  transition: color 0.16s var(--ease);
+}
+.delBtn:hover {
+  color: var(--danger);
 }
 .text {
-  color: var(--text);
+  color: var(--text-soft);
+  line-height: 1.5;
 }
 .inputRow {
   display: flex;
   gap: 6px;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 .nameInput {
-  width: 80px;
-  padding: 6px 8px;
+  width: 84px;
+  padding: 7px 9px;
   font-size: 12px;
   flex-shrink: 0;
 }
 .textInput {
   font-size: 12px;
-  padding: 6px 8px;
+  padding: 7px 9px;
 }
