@@ -2,15 +2,30 @@
 .input {
   width: 100%;
   border: 1.5px solid var(--border);
-  border-radius: 8px;
-  padding: 9px 11px;
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
   font-size: 14px;
   color: var(--text);
-  background: #fff;
+  background: var(--card);
   outline: none;
   font-family: inherit;
+  transition: border-color 0.18s var(--ease), box-shadow 0.18s var(--ease),
+    background 0.18s var(--ease);
 }
-
+.input::placeholder {
+  color: var(--muted);
+}
+.input:hover {
+  border-color: var(--border-strong);
+}
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 14%, transparent);
+  background: var(--card);
+}
+select.input {
+  cursor: pointer;
+}
 textarea.input {
   resize: vertical;
   min-height: 64px;
@@ -18,144 +33,215 @@ textarea.input {
 
 /* ───────── Badge ───────── */
 .badge {
-  color: #fff;
-  border-radius: 20px;
-  padding: 2px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: color-mix(in srgb, var(--badge-c) 12%, #fff);
+  color: color-mix(in srgb, var(--badge-c) 78%, #0f172a);
+  border: 1px solid color-mix(in srgb, var(--badge-c) 24%, #fff);
+  border-radius: var(--r-pill);
+  padding: 3px 11px 3px 9px;
   font-size: 11px;
   font-weight: 700;
+  letter-spacing: 0.01em;
   white-space: nowrap;
+}
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--badge-c);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--badge-c) 16%, transparent);
 }
 
 /* ───────── Btn ───────── */
 .btn {
+  position: relative;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--r-sm);
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 650;
   font-size: 14px;
-  padding: 9px 18px;
-  transition: opacity 0.15s;
+  padding: 10px 18px;
+  letter-spacing: 0.01em;
+  transition: transform 0.16s var(--ease), box-shadow 0.18s var(--ease),
+    opacity 0.16s var(--ease), background 0.18s var(--ease), filter 0.18s var(--ease);
   font-family: inherit;
+}
+.btn:active:not(:disabled) {
+  transform: translateY(1px) scale(0.985);
 }
 .btnSmall {
   font-size: 12px;
-  padding: 5px 11px;
+  padding: 6px 12px;
+  border-radius: 8px;
 }
 .btn:disabled {
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 0.45;
 }
 .btnPrimary {
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary-grad-1), var(--primary-grad-2));
   color: #fff;
+  box-shadow: var(--shadow-primary);
+}
+.btnPrimary:hover:not(:disabled) {
+  filter: brightness(1.05);
+  box-shadow: 0 10px 24px -6px rgba(37, 99, 235, 0.55);
+  transform: translateY(-1px);
 }
 .btnGhost {
-  background: #f1f5f9;
-  color: var(--sub);
+  background: #eef2f8;
+  color: var(--text-soft);
+}
+.btnGhost:hover:not(:disabled) {
+  background: #e4eaf3;
 }
 .btnDanger {
   background: var(--danger-light);
   color: var(--danger);
 }
+.btnDanger:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--danger) 16%, #fff);
+}
 .btnSuccess {
   background: var(--success-light);
   color: var(--success);
 }
+.btnSuccess:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--success) 16%, #fff);
+}
 .btnOutline {
   background: #fff;
   color: var(--primary);
-  border: 1.5px solid var(--primary);
+  border: 1.5px solid color-mix(in srgb, var(--primary) 35%, #fff);
+}
+.btnOutline:hover:not(:disabled) {
+  background: var(--primary-light);
 }
 
 /* ───────── Field ───────── */
 .field {
-  margin-bottom: 14px;
+  margin-bottom: 15px;
 }
 .fieldLabel {
   display: block;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--sub);
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 /* ───────── Modal ───────── */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(6px) saturate(1.1);
+  -webkit-backdrop-filter: blur(6px) saturate(1.1);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 200;
   padding: 16px;
+  animation: fadeIn 0.2s var(--ease) both;
 }
 .modal {
   background: var(--card);
-  border-radius: 16px;
-  padding: 24px 20px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  padding: 26px 22px 24px;
   width: 100%;
   max-width: 480px;
-  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.3);
+  box-shadow: var(--shadow-lg);
   max-height: 92vh;
   overflow-y: auto;
+  animation: modalIn 0.3s var(--ease-out) both;
 }
 .modalHead {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 .modalTitle {
   margin: 0;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 800;
+  letter-spacing: -0.01em;
   color: var(--text);
 }
 .modalClose {
   border: none;
-  background: none;
-  font-size: 22px;
+  background: #f1f5f9;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 16px;
   cursor: pointer;
-  color: var(--muted);
+  color: var(--sub);
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.16s var(--ease), color 0.16s var(--ease);
+}
+.modalClose:hover {
+  background: #e2e8f0;
+  color: var(--text);
 }
 
 /* ───────── Toast ───────── */
 .toast {
   position: fixed;
-  bottom: 90px;
+  bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
-  background: #1e293b;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px) saturate(1.4);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
   color: #fff;
-  border-radius: 10px;
-  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--r-pill);
+  padding: 11px 22px;
   font-size: 13px;
   font-weight: 600;
   z-index: 300;
   white-space: nowrap;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.3);
+  box-shadow: var(--shadow-lg);
+  animation: toastIn 0.32s var(--ease-out) both;
 }
 
 /* ───────── Empty ───────── */
 .empty {
   text-align: center;
-  padding: 48px 24px;
+  padding: 52px 24px;
   color: var(--muted);
 }
 .emptyIcon {
-  font-size: 40px;
-  margin-bottom: 12px;
+  font-size: 42px;
+  margin-bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 24px;
+  background: linear-gradient(160deg, #fff, var(--card-soft));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
 }
 .emptyText {
   font-weight: 700;
   font-size: 15px;
-  color: var(--sub);
+  color: var(--text-soft);
 }
 .emptySub {
   font-size: 13px;
-  margin-top: 4px;
+  margin-top: 5px;
+  color: var(--muted);
 }
 
 /* form action row */
@@ -163,4 +249,5 @@ textarea.input {
   display: flex;
   gap: 8px;
   justify-content: flex-end;
+  margin-top: 4px;
 }

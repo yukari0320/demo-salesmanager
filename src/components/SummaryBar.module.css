@@ -1,29 +1,51 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin-bottom: 18px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 .cell {
-  background: var(--card);
-  border: 1.5px solid var(--border);
-  border-radius: 10px;
-  padding: 10px 8px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(165deg, #fff, var(--card-soft));
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 14px 8px 12px;
   text-align: center;
-  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.cell:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.cell::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.07), transparent 70%);
+  pointer-events: none;
 }
 .cellAccent {
-  background: var(--warn-light);
+  background: linear-gradient(165deg, #fff, var(--warn-light));
   border-color: #fed7aa;
 }
+.cellAccent::after {
+  background: radial-gradient(circle, rgba(234, 88, 12, 0.1), transparent 70%);
+}
 .icon {
-  font-size: 18px;
+  font-size: 19px;
 }
 .value {
   font-weight: 800;
-  font-size: 18px;
+  font-size: 19px;
+  letter-spacing: -0.02em;
   color: var(--primary);
-  margin: 3px 0 1px;
+  margin: 4px 0 1px;
 }
 .valueSm {
   font-size: 13px;
@@ -35,4 +57,5 @@
   font-size: 10px;
   color: var(--muted);
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
